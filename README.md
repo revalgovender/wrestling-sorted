@@ -8,9 +8,9 @@
 
 1. Clone the repo
 
-    ```bash
-    git clone git@github.com:revalgovender/wrestling-sorted.git
-    ```
+```bash
+git clone git@github.com:revalgovender/wrestling-sorted.git
+```
 
 2. Copy `.env.example` to `.env`
 
