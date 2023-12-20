@@ -11,27 +11,29 @@
     ```bash
     git clone git@github.com:revalgovender/wrestling-sorted.git
     ```
+2. Create Postgres database and database user using `psql` or `pgAdmin`
+3. Create Google Developer API key with access to the YouTube Data API v3
 
-2. Copy `.env.example` to `.env`
+4. Copy `.env.example` to `.env`
 
     ```bash 
     cp .env.example .env
     ```
 
-3. Complete `.env` with your own values
-4. Install dependencies
+5. Complete `.env` with your own values
+6. Install dependencies
 
     ```bash
     pip install -r requirements.txt
     ```
 
-5. Run migrations with
+7. Run migrations with
 
     ```bash
     python manage.py migrate
     ```
 
-6. Run server with
+8. Run server with
 
     ```bash
     python manage.py runserver
