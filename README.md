@@ -33,7 +33,13 @@
     python manage.py migrate
     ```
 
-8. Run server with
+8. Run fixtures with
+
+    ```bash
+    python manage.py loaddata fixtures/initial_data.json
+    ```
+   
+9. Run server with
 
     ```bash
     python manage.py runserver

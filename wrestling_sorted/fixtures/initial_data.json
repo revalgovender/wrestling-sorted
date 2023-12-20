@@ -1,0 +1,16 @@
+[
+  {
+    "model": "wrestling_sorted.show",
+    "pk": 1,
+    "fields": {
+      "name": "Monday Night Raw"
+    }
+  },
+  {
+    "model": "wrestling_sorted.show",
+    "pk": 2,
+    "fields": {
+      "name": "Friday Night SmackDown"
+    }
+  }
+]
