@@ -4,35 +4,34 @@ from wrestling_sorted import settings
 
 
 class ShowsHighlights:
-    def __init__(self):
+    def __init__(self, api_key: str, playlist_id: str, max_results: int):
         self.playlist_items: dict = 0
         self.sorted_by_episode: dict = 0
+        self.api_key = api_key
+        self.playlist_id = playlist_id
+        self.max_results = max_results
 
         pass
 
-    def retrieve(self):
+    def get(self):
         if not settings.YOUTUBE_API_KEY:
             print("Please set your YouTube API key in the script.")
         else:
-            return self.get_youtube_playlist_videos(
-                settings.YOUTUBE_API_KEY,
-                settings.MONDAY_NIGHT_RAW_PLAYLIST_ID,
-                settings.MAX_ITEMS_TO_PARSE
-            )
+            return self.get_youtube_playlist_videos()
 
-    def get_youtube_playlist_videos(self, api_key: str, playlist_id: str, max_results: int) -> 'ShowsHighlights':
-        youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=api_key)
+    def get_youtube_playlist_videos(self) -> 'ShowsHighlights':
+        youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=self.api_key)
 
         # Retrieve the playlist items
         self.playlist_items = youtube.playlistItems().list(
             part="snippet",
-            playlistId=playlist_id,
-            maxResults=max_results
+            playlistId=self.playlist_id,
+            maxResults=self.max_results
         ).execute()
 
         return self
 
-    def sort(self) -> 'ShowsHighlights':
+    def group_by_episode(self) -> 'ShowsHighlights':
         """
         Sort the videos by date.
         """

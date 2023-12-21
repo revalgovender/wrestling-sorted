@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand
 
+from wrestling_sorted import settings
 from wrestling_sorted.models import Episode, Highlight, Show
 from wrestling_sorted.services.highlights import ShowsHighlights
 
@@ -14,8 +15,13 @@ class Command(BaseCommand):
         # TODO: handle the edge case where we get private videos
         # TODO: handle the edge case where we have one video publish on a day
 
-        highlights = ShowsHighlights()
-        highlights.retrieve().sort()
+        # Get the highlights from YouTube
+        highlights = ShowsHighlights(
+            settings.YOUTUBE_API_KEY,
+            settings.MONDAY_NIGHT_RAW_PLAYLIST_ID,
+            settings.MAX_ITEMS_TO_PARSE
+        )
+        highlights.get().group_by_episode()
         sorted_highlights = highlights.get_sorted_by_episode()
         show = Show.objects.get(id=1)
 
