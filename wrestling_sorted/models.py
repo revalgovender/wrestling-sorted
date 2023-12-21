@@ -1,6 +1,6 @@
 from django.db import models
 
-from wrestling_sorted.managers import EpisodeManager
+from wrestling_sorted.managers import EpisodeManager, HighlightManager
 
 
 class Show(models.Model):
@@ -28,7 +28,10 @@ class Highlight(models.Model):
     title = models.CharField(max_length=255)
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
     video_url = models.URLField()
+    # url = models.URLField(unique=True)
     episode = models.ForeignKey(Episode, on_delete=models.CASCADE)
+
+    objects = HighlightManager()
 
     def __str__(self):
         return f"Highlight {self.id}: {self.title} from {self.show.name}, Episode {self.episode.id}"

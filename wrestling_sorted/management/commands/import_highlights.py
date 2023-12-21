@@ -10,7 +10,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        # TODO: add a check to see if the highlights have already been imported
         # TODO: determine the actual date of the episode and use that as the episode_date
         # TODO: handle the edge case where we get private videos
         # TODO: handle the edge case where we have one video publish on a day
@@ -30,7 +29,7 @@ class Command(BaseCommand):
                 )
 
                 # Save highlight
-                Highlight.objects.create(
+                Highlight.objects.create_if_not_exists(
                     title=highlight['title'],
                     show=show,
                     video_url=highlight['url'],

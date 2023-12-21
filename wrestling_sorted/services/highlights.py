@@ -32,9 +32,6 @@ class Highlights:
         return self
 
     def group_by_episode(self) -> 'Highlights':
-        """
-        Sort the videos by date.
-        """
         highlights_by_episode = {}
 
         for item in self.playlist_items["items"]:
