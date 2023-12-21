@@ -19,22 +19,58 @@ class Highlights:
         else:
             return self.get_youtube_playlist_videos()
 
+    def get_all(self):
+        if not settings.YOUTUBE_API_KEY:
+            print("Please set your YouTube API key in the script.")
+        else:
+            return self.get_all_youtube_playlist_videos()
+
     def get_youtube_playlist_videos(self) -> 'Highlights':
         youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=self.api_key)
 
         # Retrieve the playlist items
-        self.playlist_items = youtube.playlistItems().list(
+        playlist_response = youtube.playlistItems().list(
             part="snippet",
             playlistId=self.playlist_id,
             maxResults=self.max_results
         ).execute()
+        self.playlist_items = playlist_response.get("items", [])
+
+        return self
+
+    def get_all_youtube_playlist_videos(self) -> 'Highlights':
+        youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=self.api_key)
+
+        next_page_token = None
+
+        while True:
+            # Retrieve the playlist items with the current page token
+            playlist_response = youtube.playlistItems().list(
+                part="snippet",
+                playlistId=self.playlist_id,
+                maxResults=self.max_results,
+                pageToken=next_page_token
+            ).execute()
+
+            # Add or append the items to the list
+            if self.playlist_items == 0:
+                self.playlist_items = playlist_response.get("items", [])
+            else:
+                self.playlist_items.extend(playlist_response.get("items", []))
+
+            # Check if there are more pages
+            next_page_token = playlist_response.get("nextPageToken")
+
+            # Break the loop if there are no more pages
+            if not next_page_token:
+                break
 
         return self
 
     def group_by_episode(self) -> 'Highlights':
         highlights_by_episode = {}
 
-        for item in self.playlist_items["items"]:
+        for item in self.playlist_items:
             # Get the video ID, title, and URL
             video_id = item["snippet"]["resourceId"]["videoId"]
             video_title = item["snippet"]["title"]
