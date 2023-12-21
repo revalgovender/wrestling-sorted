@@ -6,12 +6,12 @@ from wrestling_sorted.services.highlights import Highlights
 
 
 @api_view(["GET"])
-def list_shows_highlights(request):
+def list_tv_shows_highlights(request):
     """
-    List the shows highlights.
+    List the tv show's highlights.
     """
-    shows_highlights = Highlights()
-    highlights = shows_highlights.retrieve()
+    tv_shows_highlights = Highlights()
+    highlights = tv_shows_highlights.retrieve()
 
     response = {
         "status": 'success',

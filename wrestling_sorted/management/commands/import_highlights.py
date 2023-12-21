@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 
 from wrestling_sorted import settings
-from wrestling_sorted.models import Episode, Highlight, Show
+from wrestling_sorted.models import Episode, Highlight, TvShow
 from wrestling_sorted.services.highlights import Highlights
 
 
@@ -10,8 +10,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        # Get the show
-        show = Show.objects.get(id=1)
+        # Get the tv show
+        tv_show = TvShow.objects.get(id=1)
 
         # Save the episodes and highlights
         for episode_date, highlights in self.get_grouped_highlights():
@@ -19,15 +19,14 @@ class Command(BaseCommand):
 
                 # Save episode
                 episode = Episode.objects.create_if_not_exists(
-                    show=show,
-                    episode_date=episode_date,
-                    latest_episode=False
+                    tv_show=tv_show,
+                    episode_date=episode_date
                 )
 
                 # Save highlight
                 Highlight.objects.create_if_not_exists(
                     title=highlight['title'],
-                    show=show,
+                    tv_show=tv_show,
                     url=highlight['url'],
                     episode=episode
                 )

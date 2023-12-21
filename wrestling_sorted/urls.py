@@ -21,5 +21,5 @@ from wrestling_sorted import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/shows/highlights/', views.list_shows_highlights, name='shows_highlights'),
+    path('api/v1/tv_shows/highlights/', views.list_tv_shows_highlights, name='tv_shows_highlights'),
 ]

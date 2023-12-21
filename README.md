@@ -2,7 +2,7 @@
 
 # Wrestling Sorted
 
-API to retrieve and sort highlights from YouTube for wrestling shows
+API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 ## Table of Contents
 
