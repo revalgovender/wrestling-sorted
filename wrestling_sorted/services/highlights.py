@@ -3,10 +3,10 @@ import googleapiclient.discovery
 from wrestling_sorted import settings
 
 
-class ShowsHighlights:
+class Highlights:
     def __init__(self, api_key: str, playlist_id: str, max_results: int):
         self.playlist_items: dict = 0
-        self.sorted_by_episode: dict = 0
+        self.grouped_by_episode: dict = 0
         self.api_key = api_key
         self.playlist_id = playlist_id
         self.max_results = max_results
@@ -19,7 +19,7 @@ class ShowsHighlights:
         else:
             return self.get_youtube_playlist_videos()
 
-    def get_youtube_playlist_videos(self) -> 'ShowsHighlights':
+    def get_youtube_playlist_videos(self) -> 'Highlights':
         youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=self.api_key)
 
         # Retrieve the playlist items
@@ -31,7 +31,7 @@ class ShowsHighlights:
 
         return self
 
-    def group_by_episode(self) -> 'ShowsHighlights':
+    def group_by_episode(self) -> 'Highlights':
         """
         Sort the videos by date.
         """
@@ -54,9 +54,9 @@ class ShowsHighlights:
                     "url": video_url
                 })
 
-        self.sorted_by_episode = highlights_by_episode
+        self.grouped_by_episode = highlights_by_episode
 
         return self
 
-    def get_sorted_by_episode(self) -> dict:
-        return self.sorted_by_episode
+    def get_grouped_by_episode(self) -> dict:
+        return self.grouped_by_episode
