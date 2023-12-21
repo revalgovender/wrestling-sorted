@@ -10,10 +10,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        # TODO: determine the actual date of the episode and use that as the episode_date
-        # TODO: handle the edge case where we have one video publish on a day
+        # TODO: handle the edge case where we have one video published on a day
         # TODO: print summary of report
         # TODO: record summary of report in the database
+        # TODO: handle a year of videos from the playlist
 
         show = Show.objects.get(id=1)
 

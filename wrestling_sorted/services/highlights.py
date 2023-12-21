@@ -1,5 +1,5 @@
 import googleapiclient.discovery
-
+from datetime import datetime, timedelta
 from wrestling_sorted import settings
 
 
@@ -38,8 +38,7 @@ class Highlights:
             video_id = item["snippet"]["resourceId"]["videoId"]
             video_title = item["snippet"]["title"]
             video_url = f"https://www.youtube.com/watch?v={video_id}"
-            episode_date = item["snippet"]["publishedAt"]
-            episode_date = episode_date.split("T")[0]
+            episode_date = self.get_episode_date(item)
 
             if episode_date:
                 if episode_date not in highlights_by_episode:
@@ -54,6 +53,21 @@ class Highlights:
         self.grouped_by_episode = highlights_by_episode
 
         return self
+
+    @staticmethod
+    def get_episode_date(item):
+        """Get the date the episode aired.
+
+        WWE always publishes the highlights the day after the episode airs.
+        We can therefore subtract one day from the published date to get the date the episode aired.
+
+        """
+        # Convert published date to a datetime object
+        parsed_date = datetime.strptime(item["snippet"]["publishedAt"], '%Y-%m-%dT%H:%M:%SZ')
+        # Subtract one day to get the date the episode aired
+        new_date = (parsed_date - timedelta(days=1)).date()
+        # Format the result back to the standard Postgres date field format
+        return new_date.isoformat()
 
     def get_grouped_by_episode(self) -> dict:
         return self.grouped_by_episode
