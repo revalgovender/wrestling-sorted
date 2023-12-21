@@ -32,8 +32,6 @@ class Command(BaseCommand):
                     episode=episode
                 )
 
-                print(f"  {i}. {highlight['title']} - {highlight['url']}")
-
         self.stdout.write(self.style.SUCCESS('Successfully ran your script'))
 
     @staticmethod
