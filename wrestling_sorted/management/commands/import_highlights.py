@@ -21,9 +21,7 @@ class Command(BaseCommand):
         for episode_date, highlights in self.get_grouped_highlights():
             for i, highlight in enumerate(highlights, start=1):
 
-                # Skip highlights that are private
-                if highlight['title'] == "Private video":
-                    continue
+
 
                 # Save episode
                 episode = Episode.objects.create_if_not_exists(
