@@ -126,6 +126,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# YouTube Data API v3 key
+# Import Config
 
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+
+MONDAY_NIGHT_RAW_PLAYLIST_ID = os.getenv("MONDAY_NIGHT_RAW_PLAYLIST_ID")
+
+MAX_ITEMS_TO_PARSE = os.getenv("MAX_ITEMS_TO_PARSE")

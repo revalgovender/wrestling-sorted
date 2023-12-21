@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from wrestling_sorted.services.shows_highlights import ShowsHighlights
+from wrestling_sorted.services.highlights import ShowsHighlights
 
 
 @api_view(["GET"])
