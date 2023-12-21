@@ -47,3 +47,8 @@
   ```bash
   python manage.py import_highlights
   ```
+
+- Run the following command to import legacy highlights from YouTube:
+  ```bash
+  python manage.py import_legacy_highlights
+  ```
