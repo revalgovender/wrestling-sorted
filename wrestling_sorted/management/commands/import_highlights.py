@@ -10,18 +10,12 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        # TODO: handle the edge case where we have one video published on a day
-        # TODO: print summary of report
-        # TODO: record summary of report in the database
-        # TODO: handle a year of videos from the playlist
-
+        # Get the show
         show = Show.objects.get(id=1)
 
         # Save the episodes and highlights
         for episode_date, highlights in self.get_grouped_highlights():
             for i, highlight in enumerate(highlights, start=1):
-
-
 
                 # Save episode
                 episode = Episode.objects.create_if_not_exists(
