@@ -27,8 +27,7 @@ class Highlight(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
-    video_url = models.URLField()
-    # url = models.URLField(unique=True)
+    url = models.URLField(unique=True)
     episode = models.ForeignKey(Episode, on_delete=models.CASCADE)
 
     objects = HighlightManager()

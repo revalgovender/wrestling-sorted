@@ -11,7 +11,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         # TODO: determine the actual date of the episode and use that as the episode_date
-        # TODO: handle the edge case where we get private videos
         # TODO: handle the edge case where we have one video publish on a day
         # TODO: print summary of report
         # TODO: record summary of report in the database
@@ -21,6 +20,11 @@ class Command(BaseCommand):
         # Save the episodes and highlights
         for episode_date, highlights in self.get_grouped_highlights():
             for i, highlight in enumerate(highlights, start=1):
+
+                # Skip highlights that are private
+                if highlight['title'] == "Private video":
+                    continue
+
                 # Save episode
                 episode = Episode.objects.create_if_not_exists(
                     show=show,
@@ -32,7 +36,7 @@ class Command(BaseCommand):
                 Highlight.objects.create_if_not_exists(
                     title=highlight['title'],
                     show=show,
-                    video_url=highlight['url'],
+                    url=highlight['url'],
                     episode=episode
                 )
 
