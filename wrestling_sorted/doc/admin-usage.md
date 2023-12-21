@@ -1,4 +1,4 @@
-# Contributing
+# Admin Usage
 
 ## Installation
 
@@ -40,3 +40,10 @@
     ```bash
     python manage.py runserver
     ```
+
+## Importing Highlights from YouTube
+
+- Run the following command to import highlights from YouTube:
+  ```bash
+  python manage.py import_highlights
+  ```
