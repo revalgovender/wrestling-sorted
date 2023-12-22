@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import django_heroku
 
 # Load environment variables from .env file
 load_dotenv()
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-qpv)ra3b31+*g=(y4)304c$qu4s*#%un%5o(6yo-)ui8o(fzya
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -130,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Import Config
 
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+
+# Heroku Settings
+django_heroku.settings(locals())
