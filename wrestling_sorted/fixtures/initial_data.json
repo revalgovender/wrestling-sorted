@@ -3,14 +3,16 @@
     "model": "wrestling_sorted.tvshow",
     "pk": 1,
     "fields": {
-      "name": "Monday Night Raw"
+      "name": "Monday Night Raw",
+      "playlist_id": "PLF0CB8E7B4C77DB61"
     }
   },
   {
     "model": "wrestling_sorted.tvshow",
     "pk": 2,
     "fields": {
-      "name": "Friday Night SmackDown"
+      "name": "Friday Night SmackDown",
+      "playlist_id": "PL6C6A4475B56EC5B1"
     }
   }
 ]
