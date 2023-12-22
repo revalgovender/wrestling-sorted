@@ -7,4 +7,4 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 ## Table of Contents
 
 - [Admin Usage](wrestling_sorted/doc/admin-usage.md)
-- [API Documentation](http://127.0.0.1:8000/api/docs/) - TODO: Add link to deployed version
+- [API Documentation](http://127.0.0.1:8000/docs/) - TODO: Add link to deployed version
