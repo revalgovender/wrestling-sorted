@@ -6,4 +6,4 @@ from .models import Highlight
 class HighlightSerializer(serializers.ModelSerializer):
     class Meta:
         model = Highlight
-        fields = '__all__'
+        fields = ['id', 'title', 'url']
