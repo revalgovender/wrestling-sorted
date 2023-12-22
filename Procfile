@@ -1,1 +1,1 @@
-heroku ps
+web gunicorn wrestling_sorted.wsgi:application --log-file -
