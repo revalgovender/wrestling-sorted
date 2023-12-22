@@ -12,11 +12,13 @@ def highlights(request, tv_show_id, episode_date):
     """
     if request.method == 'GET':
         episode = Episode.objects.get(tv_show_id=tv_show_id, episode_date=episode_date)
+        tv_show = episode.tv_show
         highlights = Highlight.objects.filter(tv_show_id=tv_show_id, episode=episode)
         serializer = HighlightSerializer(highlights, many=True)
 
         # Construct payload
         payload = {
+            "tv_show": tv_show.name,
             "episode_date": episode_date,
             "total_highlights": serializer.data.__len__(),
             "highlights": serializer.data,
