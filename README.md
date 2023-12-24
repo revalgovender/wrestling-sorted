@@ -4,6 +4,11 @@
 
 API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
+## Example
+
+WWE Raw playlist
+
+
 ## API Docs
 
 - Swagger has been implemented to document the API
