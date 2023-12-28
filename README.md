@@ -47,11 +47,8 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 - Run the following command to import highlights from YouTube:
   ```bash
   python manage.py import_highlights --tv_show_id=1 --max_items_to_parse=50
- 
   ```
-
 - Run the following command to import legacy highlights from YouTube:
   ```bash
   python manage.py import_legacy_highlights --tv_show_id=1 --max_items_to_parse=50
-
   ```
