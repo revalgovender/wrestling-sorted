@@ -71,7 +71,7 @@ class Highlights:
         highlights_by_episode = {}
 
         for item in self.playlist_items:
-            # Get the video ID, title, and URL
+            # Init data
             video_id = item["snippet"]["resourceId"]["videoId"]
             video_title = item["snippet"]["title"]
             video_url = f"https://www.youtube.com/watch?v={video_id}"
