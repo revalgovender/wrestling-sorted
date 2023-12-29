@@ -35,7 +35,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
       },
       {
         "id": 2,
-        "title": "FULL MATCH – Niven & Green vs. Chance & Carter – Women’s Tag Team Title Match: Raw, Dec. 18, 2023",
+        "title": "Niven & Green vs. Chance & Carter – Women’s Tag Team Title Match: Raw, Dec. 18, 2023",
         "url": "https://www.youtube.com/watch?v=9zmUs6N3pm4"
       }
     ]
