@@ -47,11 +47,6 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     ```bash
     make run
     ```
-6. Stop the containers
-
-    ```bash
-    make stop
-    ```
 
 ## Local Database
 
@@ -59,6 +54,11 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 - pgAdmin can be accessed at http://localhost:5050/
 - Database is seeded on startup
 - Database data is persisted when containers are stopped
+
+## Local venv
+
+- If you use PyCharm Community Edition, you can create a venv in the project root to enable code completion
+- Configure PyCharm's Python interpreter to use the venv
 
 ## Importing Highlights from YouTube
 
