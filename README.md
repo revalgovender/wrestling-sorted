@@ -33,13 +33,25 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 4. Build the images
 
     ```bash
-    docker-compose build
+    make build
     ```
 5. Run the containers
 
     ```bash
-    docker-compose up -d
+    make run
     ```
+6. Down the containers
+
+    ```bash
+    make stop
+    ```
+   
+## Local Database
+
+- We have a database container running locally and a pgAdmin container to manage it
+- pgAdmin can be accessed at http://localhost:5050/
+- Database is seeded on startup
+- Database data is persisted when containers are stopped
 
 ## Importing Highlights from YouTube
 
