@@ -4,6 +4,13 @@
 
 API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
+## Table of Contents
+
+1. [API Docs](#api-docs)
+2. [Installation](#installation)
+3. [Local Database](#local-database)
+4. [Importing Highlights from YouTube](#importing-highlights-from-youtube)
+
 ## API Docs
 
 - Swagger has been implemented to document the API
@@ -45,7 +52,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     ```bash
     make stop
     ```
-   
+
 ## Local Database
 
 - We have a database container running locally and a pgAdmin container to manage it
