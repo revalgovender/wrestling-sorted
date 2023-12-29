@@ -19,7 +19,7 @@ urlpatterns = [
         name="docs",
     ),
     path(
-        'v1/tv_shows/<int:tv_show_id>/episode/<str:episode_date>/highlights/',
+        'v1/tv_shows/<int:tv_show_id>/episodes/<str:episode_date>/highlights/',
         views.highlights,
         name='tv_shows_highlights'
     ),
