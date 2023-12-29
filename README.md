@@ -47,7 +47,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     ```bash
     make run
     ```
-6. Down the containers
+6. Stop the containers
 
     ```bash
     make stop
