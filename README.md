@@ -58,7 +58,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 - Database is seeded on startup
 - Database data is persisted when containers are stopped
 
-## PyCharm  Community Edition code completion
+### PyCharm  Community Edition code completion
 
 - You can create a venv in the project root to enable code completion
 - Configure PyCharm's Python interpreter to use the venv
