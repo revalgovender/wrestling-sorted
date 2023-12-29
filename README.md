@@ -26,14 +26,18 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
   "data": {
     "tv_show": "Monday Night Raw",
     "episode_date": "2023-12-18",
-    "total_highlights": 14,
+    "total_highlights": 2,
     "highlights": [
       {
         "id": 1,
         "title": "Raw’s most explosive moments: Raw highlights, Dec. 18, 2023",
         "url": "https://www.youtube.com/watch?v=8NBYuPBQ_9s"
       },
-      ...
+      {
+        "id": 2,
+        "title": "FULL MATCH – Niven & Green vs. Chance & Carter – Women’s Tag Team Title Match: Raw, Dec. 18, 2023",
+        "url": "https://www.youtube.com/watch?v=9zmUs6N3pm4"
+      }
     ]
   }
 }
