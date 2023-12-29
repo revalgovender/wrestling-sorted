@@ -15,6 +15,29 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 - Swagger has been implemented to document the API
 - It can be accessed locally at http://127.0.0.1:8000/docs/
+- There is only one endpoint available at the moment
+
+### Endpoint - List all highlights for given episode of a TV show.
+
+- http://127.0.0.1:8000/v1/tv_shows/1/episodes/2023-12-18/highlights/ 
+```json
+{
+  "status": "success",
+  "data": {
+    "tv_show": "Monday Night Raw",
+    "episode_date": "2023-12-18",
+    "total_highlights": 14,
+    "highlights": [
+      {
+        "id": 1,
+        "title": "Raw’s most explosive moments: Raw highlights, Dec. 18, 2023",
+        "url": "https://www.youtube.com/watch?v=8NBYuPBQ_9s"
+      },
+      ...
+    ]
+  }
+}
+```
 
 ## Installation
 
