@@ -8,8 +8,8 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 1. [API Docs](#api-docs)
 2. [Installation](#installation)
-3. [Local Database](#local-database)
-4. [Importing Highlights from YouTube](#importing-highlights-from-youtube)
+3. [Local Development](#local-development)
+4. [Usage](#usage)
 
 ## API Docs
 
@@ -48,19 +48,22 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     make run
     ```
 
-## Local Database
+
+## Local Development
+
+### Database
 
 - We have a database container running locally and a pgAdmin container to manage it
 - pgAdmin can be accessed at http://localhost:5050/
 - Database is seeded on startup
 - Database data is persisted when containers are stopped
 
-## Local venv
+## PyCharm  Community Edition code completion
 
-- If you use PyCharm Community Edition, you can create a venv in the project root to enable code completion
+- You can create a venv in the project root to enable code completion
 - Configure PyCharm's Python interpreter to use the venv
 
-## Importing Highlights from YouTube
+## Usage
 
 - Run the following command to import highlights from YouTube:
 
