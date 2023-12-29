@@ -64,10 +64,12 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 - It is worth noting the database is seeded with a two TV Shows (id 1 and 2)
 - Run the following command to import highlights from YouTube:
+
   ```bash
   make import
   ```
 - Run the following command to import legacy highlights from YouTube:
+
   ```bash
   make import_legacy
   ```
