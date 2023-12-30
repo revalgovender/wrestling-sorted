@@ -30,14 +30,20 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     "total_highlights": 2,
     "highlights": [
       {
-        "id": 1,
+        "id": 85,
         "title": "Raw’s most explosive moments: Raw highlights, Dec. 18, 2023",
-        "url": "https://www.youtube.com/watch?v=8NBYuPBQ_9s"
+        "url": "https://www.youtube.com/watch?v=8NBYuPBQ_9s",
+        "thumbnail_default": "https://i.ytimg.com/vi/8NBYuPBQ_9s/default.jpg",
+        "thumbnail_medium": "https://i.ytimg.com/vi/8NBYuPBQ_9s/mqdefault.jpg",
+        "thumbnail_high": "https://i.ytimg.com/vi/8NBYuPBQ_9s/hqdefault.jpg"
       },
       {
-        "id": 2,
-        "title": "Niven & Green vs. Chance & Carter – Women’s Tag Team Match: Raw, Dec. 18, 2023",
-        "url": "https://www.youtube.com/watch?v=9zmUs6N3pm4"
+        "id": 86,
+        "title": "Niven & Green vs. Chance & Carter: Raw, Dec. 18, 2023",
+        "url": "https://www.youtube.com/watch?v=9zmUs6N3pm4",
+        "thumbnail_default": "https://i.ytimg.com/vi/9zmUs6N3pm4/default.jpg",
+        "thumbnail_medium": "https://i.ytimg.com/vi/9zmUs6N3pm4/mqdefault.jpg",
+        "thumbnail_high": "https://i.ytimg.com/vi/9zmUs6N3pm4/hqdefault.jpg"
       }
     ]
   }
