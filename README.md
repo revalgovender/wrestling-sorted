@@ -13,7 +13,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 ## API Docs
 
-- Swagger has been implemented to document the API
+- See the latest [Swagger docs](https://wrestling-sorted-api-7f40c4b67ace.herokuapp.com/docs/)
 - It can be accessed locally at http://127.0.0.1:8000/docs/
 - There is only one endpoint available at the moment
 
@@ -91,7 +91,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 - Database is seeded on startup
 - Database data is persisted when containers are stopped
 
-### PyCharm  Community Edition code completion
+### PyCharm Community Edition code completion
 
 - You can create a venv in the project root to enable code completion
 - Configure PyCharm's Python interpreter to use the venv
