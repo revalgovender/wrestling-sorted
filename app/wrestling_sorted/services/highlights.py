@@ -1,6 +1,7 @@
 import googleapiclient.discovery
 from datetime import datetime, timedelta
 from wrestling_sorted import settings
+import json
 
 
 class Highlights:
@@ -76,6 +77,10 @@ class Highlights:
             video_title = item["snippet"]["title"]
             video_url = f"https://www.youtube.com/watch?v={video_id}"
             episode_date = self.get_episode_date(item["snippet"]["publishedAt"])
+            thumbnail_default = item["snippet"]["thumbnails"]["default"]["url"]
+            thumbnail_medium = item["snippet"]["thumbnails"]["medium"]["url"]
+            thumbnail_high = item["snippet"]["thumbnails"]["high"]["url"]
+            thumbnail_maxres = item["snippet"]["thumbnails"].get("maxres", {}).get("url", None)
 
             # Skip highlights that are private
             if video_title == "Private video":
@@ -94,7 +99,11 @@ class Highlights:
                 highlights_by_episode[episode_date].append({
                     "id": video_id,
                     "title": video_title,
-                    "url": video_url
+                    "url": video_url,
+                    "thumbnail_default": thumbnail_default,
+                    "thumbnail_medium": thumbnail_medium,
+                    "thumbnail_high": thumbnail_high,
+                    "thumbnail_maxres": thumbnail_maxres,
                 })
 
         self.grouped_by_episode = highlights_by_episode

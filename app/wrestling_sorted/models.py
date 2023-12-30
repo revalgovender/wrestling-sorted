@@ -15,7 +15,7 @@ class TvShow(models.Model):
 class Episode(models.Model):
     id = models.AutoField(primary_key=True)
     tv_show = models.ForeignKey(TvShow, on_delete=models.CASCADE)
-    episode_date = models.CharField(max_length=255, unique=True)
+    episode_date = models.CharField(max_length=255)
 
     objects = EpisodeManager()
 
@@ -29,6 +29,10 @@ class Highlight(models.Model):
     tv_show = models.ForeignKey(TvShow, on_delete=models.CASCADE)
     url = models.URLField(unique=True)
     episode = models.ForeignKey(Episode, on_delete=models.CASCADE)
+    thumbnail_default = models.URLField(default=None, null=True)
+    thumbnail_medium = models.URLField(default=None, null=True)
+    thumbnail_high = models.URLField(default=None, null=True)
+    thumbnail_maxres = models.URLField(default=None, null=True)
 
     objects = HighlightManager()
 
