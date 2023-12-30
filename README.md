@@ -62,10 +62,10 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     ```bash
     git clone git@github.com:revalgovender/wrestling-sorted.git
     ```
-2. Copy `.env.example` to `.env`
+2. Copy `.env.example.local` to `.env`
 
     ```bash 
-    cp .env.example .env
+    cp .env.example.local .env
     ```
 
 3. Complete `.env` with your own values
