@@ -103,8 +103,3 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
   ```bash
   make import_raw
   ```
-- Import legacy highlights from YouTube:
-
-  ```bash
-  make import_smackdown
-  ```

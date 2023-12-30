@@ -132,7 +132,7 @@ class Highlights:
         """Rule to check if we need this highlight.
 
         On rare occasions, WWE will publish the highlights during the week when something important happens.
-        WWE will publish a special highlight package for the one or two important segments/matches.
+        WWE will publish a special highlight package for one or two important segments/matches.
         We want to skip these highlights and only save the highlights for the full episode.
         We will use the day of the week to determine if the highlight is for the full episode or not.
 
