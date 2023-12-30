@@ -15,7 +15,16 @@ class EpisodeManager(models.Manager):
 
 
 class HighlightManager(models.Manager):
-    def create_if_not_exists(self, title, tv_show, url, episode):
+    def create_if_not_exists(
+            self,
+            title,
+            tv_show,
+            url,
+            thumbnail_default,
+            thumbnail_medium,
+            thumbnail_high,
+            thumbnail_maxres,
+            episode):
         try:
             # Try to get the existing highlight
             return self.get(url=url, episode=episode)
@@ -25,5 +34,9 @@ class HighlightManager(models.Manager):
                 title=title,
                 tv_show=tv_show,
                 url=url,
+                thumbnail_default=thumbnail_default,
+                thumbnail_medium=thumbnail_medium,
+                thumbnail_high=thumbnail_high,
+                thumbnail_maxres=thumbnail_maxres,
                 episode=episode
             )
