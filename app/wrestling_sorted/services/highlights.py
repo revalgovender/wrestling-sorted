@@ -77,9 +77,9 @@ class Highlights:
             video_title = item["snippet"]["title"]
             video_url = f"https://www.youtube.com/watch?v={video_id}"
             episode_date = self.get_episode_date(item["snippet"]["publishedAt"])
-            thumbnail_default = item["snippet"]["thumbnails"]["default"]["url"]
-            thumbnail_medium = item["snippet"]["thumbnails"]["medium"]["url"]
-            thumbnail_high = item["snippet"]["thumbnails"]["high"]["url"]
+            thumbnail_default = item["snippet"]["thumbnails"].get("default", {}).get("url", None)
+            thumbnail_medium = item["snippet"]["thumbnails"].get("medium", {}).get("url", None)
+            thumbnail_high = item["snippet"]["thumbnails"].get("high", {}).get("url", None)
             thumbnail_maxres = item["snippet"]["thumbnails"].get("maxres", {}).get("url", None)
 
             # Skip highlights that are private

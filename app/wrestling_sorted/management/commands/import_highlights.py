@@ -41,6 +41,10 @@ class Command(BaseCommand):
                     title=highlight['title'],
                     tv_show=tv_show,
                     url=highlight['url'],
+                    thumbnail_default=highlight['thumbnail_default'],
+                    thumbnail_medium=highlight['thumbnail_medium'],
+                    thumbnail_high=highlight['thumbnail_high'],
+                    thumbnail_maxres=highlight['thumbnail_maxres'],
                     episode=episode
                 )
 
