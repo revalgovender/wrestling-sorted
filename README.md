@@ -19,7 +19,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 ### Endpoint - List all highlights for given episode of a TV show.
 
-- http://127.0.0.1:8000/v1/tv_shows/1/episodes/2023-12-18/highlights/
+- https://wrestling-sorted-api-7f40c4b67ace.herokuapp.com/v1/tv_shows/1/episodes/2023-12-18/highlights/
 
 ```json
 {
@@ -81,20 +81,6 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     ```bash
     make run
     ```
-
-## Local Development
-
-### Database
-
-- We have a database container running locally and a pgAdmin container to manage it
-- pgAdmin can be accessed at http://localhost:5050/
-- Database is seeded on startup
-- Database data is persisted when containers are stopped
-
-### PyCharm Community Edition code completion
-
-- You can create a venv in the project root to enable code completion
-- Configure PyCharm's Python interpreter to use the venv
 
 ## Usage
 
