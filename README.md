@@ -19,7 +19,8 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 ### Endpoint - List all highlights for given episode of a TV show.
 
-- http://127.0.0.1:8000/v1/tv_shows/1/episodes/2023-12-18/highlights/ 
+- http://127.0.0.1:8000/v1/tv_shows/1/episodes/2023-12-18/highlights/
+
 ```json
 {
   "status": "success",
@@ -75,7 +76,6 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
     make run
     ```
 
-
 ## Local Development
 
 ### Database
@@ -95,10 +95,10 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 - Import highlights from YouTube:
 
   ```bash
-  make import
+  make import_raw
   ```
 - Import legacy highlights from YouTube:
 
   ```bash
-  make import_legacy
+  make import_smackdown
   ```
