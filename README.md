@@ -1,6 +1,6 @@
 # Wrestling Sorted
 
-API to retrieve and sort highlights from YouTube for wrestling tv shows.
+API to retrieve and sort highlights from YouTube for wrestling tv shows. Currently offline.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ API to retrieve and sort highlights from YouTube for wrestling tv shows.
 
 ### Endpoint - List all highlights for given episode of a TV show.
 
-- https://wrestling-sorted-api-7f40c4b67ace.herokuapp.com/v1/tv_shows/1/episodes/2023-12-18/highlights/
+- `/v1/tv_shows/1/episodes/2023-12-18/highlights/`
 
 ```json
 {
